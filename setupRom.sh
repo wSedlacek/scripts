@@ -13,12 +13,12 @@ echo -e "${kRED}==SETTING-UP-"$DEVICE"==${kNONE}"
 echo ""
 sleep 3
 
-if [ DEVICESNUM >= 1 ]; then
+if [[ -n "$DEVICES" ]]; then
     export TARGET_DIR="$REPO_DIR""$ZIP_DIR""/""$DEVICE"
 fi
 
 . build/envsetup.sh
-lunch "$ROMNAME"_"$DEVICE"-userdebug -j$BRUNCH
+lunch "$ROM_NAME"_"$DEVICE"-userdebug -j$BRUNCH
 
 #Setting Up Rom
 echo ""

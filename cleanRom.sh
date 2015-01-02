@@ -25,7 +25,7 @@ if [[ "$FRESH_DATES" == "1" ]]; then
     rm -rf "$TARGET_DIR"*.zip
     rm -rf "$TARGET_DIR"*.zip.md5sum
     rm -f out/target/product/*/obj/KERNEL_OBJ/.version
-elif [[$(date '+%a') == "$CLEAN" ]]; then
+elif [[ $(date '+%a') == "$CLEAN" ]]; then
     echo ""
     echo -e "${kPURPLE}=CLEANING-DATES=${kNONE}"
     echo ""
@@ -64,7 +64,7 @@ if [[ "$OPTICHARGE" == "1" ]]; then
     rm -rf packages
     rm -rf vendor
 #Clean on Trash Day.
-elif [[$(date '+%a') == "$CLEAN" ]]; then
+elif [[ $(date '+%a') == "$CLEAN" ]]; then
     echo ""
     echo -e "${kCYAN}=CLEANING-REPOS=${kNONE}"
     echo ""
@@ -77,11 +77,20 @@ fi
 #Remove Old Nightlies
 if [ "$DRIVE" == "1" ]; then
     echo ""
-    echo -e "${kPINK}=CLEANING-NIGHTLIES=${kNONE}"
+    echo -e "${kYELLOW}=CLEANING-NIGHTLIES=${kNONE}"
     echo ""
     sleep 1
     old=`date +'%m%d%y' -d "$end_date-4 days"`
     rm -rf ~/Google\ Drive/Nightlies/$old/
+fi
+
+#Clobber
+if [[ $(date '+%a') == "$CLEAN" ]]; then
+    echo ""
+    echo -e "${kRED}=CLOBBERING=${kNONE}"
+    echo ""
+    sleep 1
+    rm -rf out
 fi
 
 #CLEANING

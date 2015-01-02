@@ -11,7 +11,7 @@ export BRUNCH=8
 export PICKS=". picks.sh"
 
 #Opticharge
-export OPTICHARGE=1
+export OPTICHARGE=0
 
 #Prebuilt Chromium
 export USE_PREBUILT_CHROMIUM=0
@@ -41,9 +41,9 @@ export FILE="$VERSION.zip"
 export MD5="$VERSION.zip.md5sum"
 
 #Uploads
-export DRIVE=Y
-export SCPYN=n
-export FTPYN=n
+export DRIVE=1
+export SCPYN=0
+export FTPYN=0
 
 #HTML
 export SITEHTML="index.html"
