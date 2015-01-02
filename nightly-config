@@ -1,0 +1,67 @@
+#Trash Day
+export CLEAN=Thu
+export FRESH_DATES=1
+export CLEAN_KERNELS=0
+
+#J Speeds
+export SYNC=24
+export BRUNCH=8
+
+#Cherry-picks
+export PICKS=". picks.sh"
+
+#Opticharge
+export OPTICHARGE=1
+
+#Prebuilt Chromium
+export USE_PREBUILT_CHROMIUM=0
+
+#Devices
+export DEVICE=
+export DEVICES=( shamu hammerhead m8 vs980 toro )
+export DEVICESNUM=5
+
+#BUILDTYPE
+export BUILDTYPE=userdebug
+
+#Dirs
+export REPO_DIR=/home/william/android/vanir_basic
+export ZIP_DIR="/out/target/product"
+export TARGET_DIR="$REPO_DIR""$ZIP_DIR""/""$DEVICE""/"
+
+#Versions
+export PREFIX="exodus-"
+export ROM_NAME="vanir"
+export ROM_VESION=5.0.2
+export DATE=$(date +".%m%d%y")
+
+#Files
+export VERSION="$PREFIX""$ROMNAME"_"$DEVICE""$ROM_VESION$DATE"
+export FILE="$VERSION.zip"
+export MD5="$VERSION.zip.md5sum"
+
+#Uploads
+export DRIVE=Y
+export SCPYN=n
+export FTPYN=n
+
+#HTML
+export SITEHTML="index.html"
+export TEMPHTML="temp"
+
+#FTP
+export FTP=". ftp.sh"
+export FTPTARGETDIR="/$DEVICE/$ROMNAME/"us-
+
+#OTHER
+export BEEP=1
+
+#CODE
+######################################
+#Fix Device Numbers for Arrays       #
+if [[ -n "$DEVICESNUM" ]]; then      #
+    let "DEVICESNUM-=1"              #
+else                                 #
+    DEVICESNUM=0                     #
+fi                                   #
+######################################DATE
