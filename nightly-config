@@ -1,5 +1,5 @@
 #Trash Day
-export CLEAN=Thu
+export CLEAN=Sat
 export FRESH_DATES=1
 export CLEAN_KERNELS=0
 
@@ -11,15 +11,15 @@ export BRUNCH=8
 export PICKS=". picks.sh"
 
 #Opticharge
-export OPTICHARGE=0
+export OPTICHARGE=1
 
 #Prebuilt Chromium
 export USE_PREBUILT_CHROMIUM=0
 
 #Devices
 export DEVICE=
-export DEVICES=( shamu hammerhead m8 vs980 toro )
-export DEVICESNUM=5
+export DEVICES=( shamu hammerhead m8 vs980 toro toroplus grouper manta )
+export DEVICESNUM=7
 
 #BUILDTYPE
 export BUILDTYPE=userdebug
@@ -64,4 +64,4 @@ if [[ -n "$DEVICESNUM" ]]; then      #
 else                                 #
     DEVICESNUM=0                     #
 fi                                   #
-######################################DATE
+######################################
