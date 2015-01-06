@@ -29,24 +29,33 @@ echo -e "ctl+c to cancel then rerun with nightly. ${kNONE}"
 echo ""
 sleep 3
 
-source beepSetup
-time source cleanRom
-time source updateRom
-time source pngOpti
+if [ -z "$BUILDING" ]; then
+    source beepSetup
+    time source cleanRom
+    time source updateRom
+    time source pngOpti
+fi
+
 
 #DEVICEs to BUILD for
 for i in $(eval echo {0..$DEVICESNUM})
 do
-    #More than one Device
-    if [[ -n "$DEVICES" ]]; then
-        DEVICE=${DEVICES[$i]}
+    if [ -z "$BUILDING" ]; then
+        #More than one Device
+        if [[ -n "$DEVICES" ]]; then
+            export DEVICE=${DEVICES[$i]}
+        fi
+    else
+        i=$ROUND
     fi
+
+    export ROUND=$i
 
     source setupRom
     time source buildRom
 
-    COMPLETED=(eval echo source evaluateRom)
-    if [ "$COMPLETED" ]; then
+    source evaluateRom
+    if [ "$COMPLETED" == "1" ]; then
         time source uploadRom
     fi
 

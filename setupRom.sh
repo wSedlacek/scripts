@@ -14,7 +14,10 @@ echo ""
 sleep 3
 
 if [[ -n "$DEVICES" ]]; then
-    export TARGET_DIR="$REPO_DIR""$ZIP_DIR""/""$DEVICE"
+    export TARGET_DIR="$REPO_DIR""$ZIP_DIR""/""$DEVICE""/"
+    export VERSION="$PREFIX""$ROM_NAME"_"$DEVICE"_"$ROM_VESION$FILE_DATE"
+    export FILE="$VERSION.zip"
+    export MD5="$VERSION.zip.md5"
 fi
 
 . build/envsetup.sh

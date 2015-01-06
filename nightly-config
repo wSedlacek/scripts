@@ -1,5 +1,5 @@
 #Trash Day
-export CLEAN=Sat
+export CLEAN=Mon
 export FRESH_DATES=1
 export CLEAN_KERNELS=0
 
@@ -33,12 +33,14 @@ export TARGET_DIR="$REPO_DIR""$ZIP_DIR""/""$DEVICE""/"
 export PREFIX="exodus-"
 export ROM_NAME="vanir"
 export ROM_VESION=5.0.2
-export DATE=$(date +".%m%d%y")
+export DATE=$(date +"%m%d%y")
+FILE_DATE=`date +'%m%d%y' -d "$end_date-1 days"`
+export FILE_DATE=".""$FILE_DATE"
 
 #Files
-export VERSION="$PREFIX""$ROMNAME"_"$DEVICE""$ROM_VESION$DATE"
+export VERSION="$PREFIX""$ROM_NAME"_"$DEVICE"_"$ROM_VESION$FILE_DATE"
 export FILE="$VERSION.zip"
-export MD5="$VERSION.zip.md5sum"
+export MD5="$VERSION.zip.md5"
 
 #Uploads
 export DRIVE=1

@@ -19,9 +19,9 @@ if [ "$DRIVE" == "1" ]; then
     sleep 1
 
     #Setup
-    mkdir -p ~/Google\ Drive/Nightlies/$TODAY/$DEVICE
+    mkdir -p ~/Google\ Drive/Nightlies/$DATE/$DEVICE
     cp "$REPO_DIR"/"$DEVICE"/"$FILE" ~/Google\ Drive/Nightlies/$DATE/$DEVICE/$FILE
-    cp "$REPO_DIR"/"$DEVICE"/"$MD%" ~/Google\ Drive/Nightlies/$DATE/$DEVICE/$MD5
+    cp "$REPO_DIR"/"$DEVICE"/"$MD5" ~/Google\ Drive/Nightlies/$DATE/$DEVICE/$MD5
 
     #Upload
     grive -p ~/Google\ Drive &
