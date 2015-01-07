@@ -19,22 +19,22 @@ if [[ "$FRESH_DATES" == "1" ]]; then
     echo -e "${kPURPLE}=CLEANING-DATES=${kNONE}"
     echo ""
     sleep 1
-    rm -f "$TARGET_DIR"system/build.prop
-    rm -f "$TARGET_DIR"system/app/*.odex
-    rm -f "$TARGET_DIR"system/framework/*.odex
-    rm -rf "$TARGET_DIR"*.zip
-    rm -rf "$TARGET_DIR"*.zip.md5sum
+    rm -f out/target/product/*/system/build.prop
+    rm -f out/target/product/*/system/app/*.odex
+    rm -f out/target/product/*/system/framework/*.odex
+    rm -rf out/target/product/*/*.zip
+    rm -rf out/target/product/*/*.zip.md5sum
     rm -f out/target/product/*/obj/KERNEL_OBJ/.version
 elif [[ $(date '+%a') == "$CLEAN" ]]; then
     echo ""
     echo -e "${kPURPLE}=CLEANING-DATES=${kNONE}"
     echo ""
     sleep 1
-    rm -f "$TARGET_DIR"system/build.prop
-    rm -f "$TARGET_DIR"system/app/*.odex
-    rm -f "$TARGET_DIR"system/framework/*.odex
-    rm -rf "$TARGET_DIR"*.zip
-    rm -rf "$TARGET_DIR"*.zip.md5sum
+    rm -f out/target/product/*/system/build.prop
+    rm -f out/target/product/*/system/app/*.odex
+    rm -f out/target/product/*/system/framework/*.odex
+    rm -rf out/target/product/*/*.zip
+    rm -rf out/target/product/*/*.zip.md5sum
     rm -f out/target/product/*/obj/KERNEL_OBJ/.version
 fi
 

@@ -52,13 +52,16 @@ do
     export ROUND=$i
 
     source setupRom
-    time source buildRom
 
-    source evaluateRom
-    if [ "$COMPLETED" == "1" ]; then
-        time source uploadRom
+    if [ ! -f "~/Google Drive/Nightlies/$DATE/$DEVICE/$FILE" ]; then
+        time source buildRom
+
+
+        source evaluateRom
+        if [ "$COMPLETED" == "1" ]; then
+            time source uploadRom
+        fi
     fi
-
 done
 
 echo ""

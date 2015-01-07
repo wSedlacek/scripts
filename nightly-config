@@ -34,8 +34,10 @@ export PREFIX="exodus-"
 export ROM_NAME="vanir"
 export ROM_VESION=5.0.2
 export DATE=$(date +"%m%d%y")
-FILE_DATE=`date +'%m%d%y' -d "$end_date-1 days"`
+FILE_DATE=`date +'%m%d%y'`
 export FILE_DATE=".""$FILE_DATE"
+
+# -d "$end_date-1 days"`
 
 #Files
 export VERSION="$PREFIX""$ROM_NAME"_"$DEVICE"_"$ROM_VESION$FILE_DATE"
@@ -53,7 +55,7 @@ export TEMPHTML="temp"
 
 #FTP
 export FTP=". ftp.sh"
-export FTPTARGETDIR="/$DEVICE/$ROMNAME/"us-
+export FTPTARGETDIR="/$DEVICE/$ROM_NAME/"us-
 
 #OTHER
 export BEEP=1
