@@ -13,13 +13,12 @@ do
   SCRIPT=${SCRIPTS[$i]}
   chmod a+x "$IN"/$SCRIPT.sh
   if [ ! -f /usr/bin/$SCRIPT ]; then
-    echo -e "${kGREEN}Password please${kNONE}"
     sudo sleep 1
     echo ""
     sudo chmod 77 /usr/bin/
     cp "$IN"/$SCRIPT.sh /usr/bin/$SCRIPT
     sudo chmod 0755 /usr/bin
-    echo -e "${kRED}PLEASES RUN AS COMAND: ${GREEN}nightly${kNONE}"
+    echo -e "${kRED}PLEASES RUN AGAIN!${kNONE}"
     echo ""
   else
     cp "$IN"/$SCRIPT.sh /usr/bin/$SCRIPT

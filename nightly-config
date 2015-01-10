@@ -25,7 +25,8 @@ export DEVICESNUM=7
 export BUILDTYPE=userdebug
 
 #Dirs
-export REPO_DIR=/home/william/android/vanir_basic
+USERNAME=$(eval whoami)
+export REPO_DIR=/home/$USERNAME/android/vanir
 export ZIP_DIR="/out/target/product"
 export TARGET_DIR="$REPO_DIR""$ZIP_DIR""/""$DEVICE""/"
 
@@ -46,6 +47,7 @@ export MD5="$VERSION.zip.md5"
 
 #Uploads
 export DRIVE=1
+export BACKGROUND_UPLOAD=1
 export SCPYN=0
 export FTPYN=0
 

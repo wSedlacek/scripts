@@ -22,9 +22,14 @@ if [ "$DRIVE" == "1" ]; then
     mkdir -p ~/Google\ Drive/Nightlies/$DATE/$DEVICE
     cp "$REPO_DIR"/"$DEVICE"/"$FILE" ~/Google\ Drive/Nightlies/$DATE/$DEVICE/$FILE
     cp "$REPO_DIR"/"$DEVICE"/"$MD5" ~/Google\ Drive/Nightlies/$DATE/$DEVICE/$MD5
+    cp "$REPO_DIR"/changelog ~/Google\ Drive/Nightlies/$DATE/changelog
 
     #Upload
-    grive -p ~/Google\ Drive &
+    if [ "$BACKGROUND_UPLOAD" == "1" ]; then
+        grive -p ~/Google\ Drive &
+    else
+        grive -p ~/Google\ Drive
+    fi
 
     # Clear Scrollback Buffer
     echo -e '\0033\0143'

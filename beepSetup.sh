@@ -24,6 +24,7 @@ if [[ "$BEEP" == "1" ]]; then
         read $REPLY2
         if [ "$REPLY2" == "n" ] || [ "$REPLY2" == "N" ]; then
             sudo apt-get install beep
+            sudo pacman -S beep
             beep -f 900 -l 100
             beep -f 300 -l 300
             beep -f 100 -l 900

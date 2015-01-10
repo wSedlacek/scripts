@@ -3,10 +3,6 @@
 #Go to Repo Dir
 cd $REPO_DIR
 
-# Clear Scrollback Buffer
-echo -e '\0033\0143'
-clear
-
 #CLEANING
 echo ""
 echo -e "${kYELLOW}==SEARCHING-FOR-COMPLETED-ROM==${kNONE}"
