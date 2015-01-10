@@ -2,6 +2,7 @@
 
 #Location of scripts
 #Change if not on Google Drive
+IN=~/android/scripts
 if [[ -z "$IN" ]]; then
    IN=$(pwd)
 fi

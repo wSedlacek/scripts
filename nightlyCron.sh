@@ -6,12 +6,13 @@ cd $IN
 echo -e '\0033\0143'
 clear
 
+source colorCoding
+
 #Configs
 echo ""
 echo -e "${kRED}==SETTING VALUES IN CONFIG==${kNONE}"
 echo ""
 sleep 1
-source colorCoding
 source nightly-config
 
 # Clear Scrollback Buffer
